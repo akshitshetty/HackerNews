@@ -19,7 +19,7 @@ public class HackerNewsFetch {
         logger.info("Fetching top stories from HackerNews API");
         String Uri = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
         int[] res = restTemplate.getForObject(Uri, int[].class);
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             String url = "https://hacker-news.firebaseio.com/v0/item/" + res[i] + ".json?print=pretty";
             Story story = restTemplate.getForObject(url, Story.class);
             stories.add(story);
